@@ -1,6 +1,6 @@
 # A Sliced Wasserstein Loss for Neural Texture Synthesis
 
-This is an unofficial **JAX** implementation.
+> This is an unofficial [**JAX**](https://github.com/google/jax) implementation for [A Sliced Wasserstein Loss for Neural Texture Synthesis (CVPR'21)](https://arxiv.org/abs/2006.07229).
 
 Please see [here](https://github.com/tchambon/A-Sliced-Wasserstein-Loss-for-Neural-Texture-Synthesis) for the author's repository and cite them:
 
