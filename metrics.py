@@ -112,6 +112,9 @@ def load_pretrained_VGG19_from_pth(pth_path):
 
     # formulate pretrained weights as corresponding leaves
     vgg_jnp = np.load(pth_path, allow_pickle=True).item()
+    vgg_jnp = jax.tree_util.tree_map_with_path(
+        lambda kp, x: x[..., None, None] if "bias" in str(kp) else x, vgg_jnp
+    )
     leaves_order = [
         "block1_conv1.weight",
         "block1_conv1.bias",
@@ -199,12 +202,14 @@ def create_gram_loss(features, exemplar):
 
     return gram_loss
 
+
 def gram_matrix(f):
     f = f.reshape(f.shape[0], -1)
     gram_matrix = f @ f.transpose()
 
     gram_matrix = gram_matrix / f.shape[-1]
     return gram_matrix
+
 
 def gram_loss(features, exemplar, sample, key=None):
     features_exemplar = features(exemplar)
