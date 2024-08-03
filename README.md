@@ -38,3 +38,10 @@ python texsyn.py --exemplar_path data/input.png --loss_type sw
 Input | Output (Slice) | Output (Gram)
 ---------|----------|---------
  ![alt text](data/input.png) | ![alt text](data/result_sw.png) | ![alt text](data/result_gram.png)
+
+
+## Last words
+
+Thanks all efforts put on making all mentioned repositories public.
+
+We appreciate bug reports. I will fix them when I make time around.
